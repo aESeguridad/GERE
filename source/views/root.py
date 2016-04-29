@@ -13,7 +13,7 @@ root = Blueprint('root',__name__)
 """
 
 
- @root.route('/', methods=['GET'])
+@root.route('/', methods=['GET'])
 def index():
     """.. function:: index()
     

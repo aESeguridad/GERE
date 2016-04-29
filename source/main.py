@@ -1,6 +1,11 @@
-from flask import Flask, render_template
+#/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+db = SQLAlchemy(app)
 
 from views.root import root
 app.register_blueprint(root)
