@@ -10,6 +10,9 @@ class Client(db.Model):
     name = db.Column(db.String, nullable = False)
     company = db.Column(db.String, nullable = True)
     vat = db.Column(db.String(11), nullable = False)
+    street = db.Column(db.String, nullable = False)
+    address2 = db.Column(db.String, nullable = False)
+    
     
     #: Relationship
     contacts = db.relationship('Contact', backref='Client', lazy='dynamic')
