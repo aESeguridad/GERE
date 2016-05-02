@@ -85,8 +85,8 @@ class Contact(db.Model):
                                      'individual', 'worker', 'accountant',
                                      'manager', name='enum_contact_type'),
                              nullable=True, default='individual')
-    
->>>>>>> refs/remotes/origin/master
+
+
     def __init__(self, **kwargs):
         if kwargs:
             self.client = kwargs['client']
