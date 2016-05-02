@@ -25,3 +25,4 @@ def index(**kwargs):
 def AddClient():
     if request.method == 'GET':
         return render_template('AddClient.html', title=u'Añadir Cliente')
+
