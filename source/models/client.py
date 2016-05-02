@@ -23,12 +23,7 @@ class Client(db.Model):
     email = db.Column(db.String, nullable = True)
     web = db.Column(db.String, nullable = True)
     client_type = db.Column(db.Enum('company', 'individual',name='enum_client_type'), nullable = True,
-<<<<<<< HEAD
                             default = 'individual')
-=======
-            default = 'individual')
-    
->>>>>>> refs/remotes/origin/master
     #: Relationships
     contacts = db.relationship('Contact', backref='Client', lazy='dynamic')
     
@@ -87,13 +82,9 @@ class Contact(db.Model):
     email = db.Column(db.String, nullable=True)
     web = db.Column(db.String, nullable=True)
     contact_type = db.Column(db.Enum('send_address', 'bill_address',
-<<<<<<< HEAD
                                      'individual', 'worker', 'accountant',
                                      'manager', name='enum_contact_type'),
                              nullable=True, default='individual')
-=======
-            'individual', 'worker', 'accountant', 'manager',name='enum_contact_type'),
-            nullable = True, default = 'individual')
     
 >>>>>>> refs/remotes/origin/master
     def __init__(self, **kwargs):
