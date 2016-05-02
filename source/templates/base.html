@@ -51,15 +51,7 @@
       </div> -->
 
       <!-- search form (Optional) -->
-      <form action="finder" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
+      
       <!-- /.search form -->
 
       <!-- Sidebar Menu -->
@@ -85,19 +77,26 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Page Header
-        <small>Optional description</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
+    <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            {% block header_content %}{% endblock header_content %}
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+            <form action="" method="post" class="">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Búsqueda">
+                        <span class="input-group-btn">
+                        <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                        </button>
+                        </span>
+                </div>
+            </form>
+        </div>
     </section>
-
+    <hr />
     <!-- Main content -->
     <section class="content">
-
+    {% block content %}{% endblock content %}
       <!-- Your Page Content Here -->
 
     </section>

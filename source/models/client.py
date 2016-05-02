@@ -1,7 +1,6 @@
 #/usr/bin/env python
 # -*- coding: utf-8 -*-
 from source.main import db
-
 class Client(db.Model):
     __tablename__ = 'client'
     
@@ -52,7 +51,7 @@ class Contact(db.Model):
     
     #:Columns
     id = db.Column(db.Integer, primary_key = True)
-    client = db.Column(db.Integer, db.ForeignKey('Client.id'), nullable = False)
+    client = db.Column(db.Integer, db.ForeignKey('client.id'), nullable = False)
     name = db.Column(db.String, nullable = False)
     street = db.Column(db.String, nullable = False)
     address2 = db.Column(db.String, nullable = False)
@@ -86,3 +85,8 @@ class Contact(db.Model):
             
     def __repr__(self):
         return None
+        
+        
+        
+if __name__ == "__main__":
+    db.create_all()

@@ -5,21 +5,21 @@ from source.main import app
 from source.models.client import Client
 
 
-finder = Blueprint('finder',__name__)
+clients = Blueprint('finder',__name__)
 """ Main application view module
 
     Routes
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    *index*  Results page
+    *index*  
 """
 
 
 
-@finder.route('/', methods=['GET','POST'])
+@clients.route('/', methods=['GET'])
 def index(**kwargs):
     """.. function:: index()
     
     Returns the default page with the results of the query
     """
-    #results = Client.query.filter_by(name=request.form['q']).all()
-    return render_template('base.html', title='Resultados')
+    results = Client.query.limit(20)
+    return render_template('clients.html', title='Resultados', results=results)
