@@ -9,3 +9,6 @@ db = SQLAlchemy(app)
 
 from views.root import root
 app.register_blueprint(root)
+
+from views.finder import finder
+app.register_blueprint(finder, url_prefix='/finder')

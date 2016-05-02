@@ -19,4 +19,4 @@ def index():
     
     Returns the default page
     """
-    return render_template('base.html')
+    return render_template('base.html', title='Inicio')
