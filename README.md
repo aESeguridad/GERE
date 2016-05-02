@@ -1,3 +1,3 @@
 # GERE
 
-Development in preogress
+Development in progress
