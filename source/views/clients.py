@@ -5,7 +5,7 @@ from source.main import app
 from source.models.client import Client
 
 
-clients = Blueprint('finder',__name__)
+clients = Blueprint('clients',__name__)
 """ Main application view module
 
     Routes

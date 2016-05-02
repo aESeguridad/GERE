@@ -19,7 +19,7 @@ class Client(db.Model):
     fax = db.Column(db.Integer, nullable = True)
     email = db.Column(db.String, nullable = True)
     web = db.Column(db.String, nullable = True)
-    client_type = db.Column(db.Enum('company', 'individual'), nullable = True,
+    client_type = db.Column(db.Enum('company', 'individual',name='enum_client_type'), nullable = True,
             default = 'individual')
     
     #: Relationships
@@ -64,7 +64,7 @@ class Contact(db.Model):
     email = db.Column(db.String, nullable = True)
     web = db.Column(db.String, nullable = True)
     contact_type = db.Column(db.Enum('send_address', 'bill_address',
-            'individual', 'worker', 'accountant', 'manager'),
+            'individual', 'worker', 'accountant', 'manager',name='enum_contact_type'),
             nullable = True, default = 'individual')
     
     def __init__(self, **kwargs):
