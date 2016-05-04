@@ -3,6 +3,7 @@
 from flask_wtf import Form
 from wtforms import StringField, SelectField
 from wtforms.validators import DataRequired
+from sqlalchemy.dialects.postgresql import BYTEA
 from source.main import db
 
 class Client(db.Model):
@@ -47,7 +48,7 @@ class Client(db.Model):
         return None
 
 class ClientForm(Form):
-    client_type = SelectField('Tipo', choices=[('company',u'Empresa'),('individual','Particular')])
+    client_type = SelectField('Tipo', choices=[('company', u'Empresa'), ('individual', 'Particular')])
     name = StringField(u'Nombre', validators=[DataRequired(message='Debes introducir un nombre')])
     company = StringField(u'Compañía', validators=None)
     vat = StringField(u'CIF/NIF', validators=[DataRequired()])

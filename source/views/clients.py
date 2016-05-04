@@ -24,5 +24,6 @@ def index(**kwargs):
 @clients.route('/add', methods=['POST','GET'])
 def AddClient():
     if request.method == 'GET':
-        return render_template('AddClient.html', title=u'Añadir Cliente')
+        form = ClientForm()
+        return render_template('AddClient.html', title=u'Añadir Cliente', form=form)
 
